@@ -1,26 +1,13 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
+    "jsx": "react-jsx", // Make sure this option is set to "react-jsx"
     "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    "baseUrl": "./",
+    "paths": {
+      "@views/*": ["src/views/*"],
+      "@assets/*": ["src/assets/*"],
+      "@enums/*": ["src/enums/*"]
+    }
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }

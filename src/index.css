@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.cover {
+  background-image: url("../src/assets/resources/pngtree-food-doodle-set-illustration-vector-collection-png-image_8801680.png");
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  filter: blur(15px);
+  z-index: -1;
+}
