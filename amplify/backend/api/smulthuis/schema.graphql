@@ -1,0 +1,21 @@
+type MenueItems @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  description: String
+  Menu: [Menus] @manyToMany(relationName: "MenueItemsMenus")
+}
+
+type Menus @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  title: String
+  menueitemss: [MenueItems] @manyToMany(relationName: "MenueItemsMenus")
+}
+
+type Services @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  title: String
+  subtitle: String
+  content: String
+  imageUrl: String
+}
+ 
