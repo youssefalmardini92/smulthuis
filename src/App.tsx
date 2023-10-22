@@ -7,7 +7,7 @@ import pages from "./constants/pages";
 import Page from "./Layout/Page/Page";
 import Footer from "./Layout/Navigation/Footer";
 import Container from "@mui/material/Container";
-import {useLocalStorage} from "usehooks-ts";
+import { useLocalStorage } from "usehooks-ts";
 
 const App: React.FC = () => {
 
@@ -37,6 +37,14 @@ const App: React.FC = () => {
                                 )
                             })
                         }
+                        <Route path="*"
+                               element={
+                                   <Page
+                                       headerTitle={"page-not-found"}
+                                       pageNotFound
+                                   />
+                               }
+                        />
                     </Routes>
                     <Footer/>
                 </Container>
