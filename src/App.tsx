@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import DrawerAppBar from "./Layout/Navigation/DrawerAppBar";
 import {ThemeProvider} from '@mui/material/styles';
@@ -12,6 +12,25 @@ import { useLocalStorage } from "usehooks-ts";
 const App: React.FC = () => {
 
     const [isDarkTheme] = useLocalStorage('darkTheme', false);
+    const navElements = document.getElementsByTagName("nav");
+
+    useEffect( ()=> {
+        // Get all the nav elements
+
+        console.log(navElements);
+
+        const nav = navElements[0];
+        if (nav) {
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 100) {
+                    nav.style.background = "rgba(0, 0, 0, 0.4)"; // Change the background opacity as needed
+                } else {
+                    nav.style.background = "rgba(0, 0, 0, 0)";
+                }
+            });
+        }
+
+    }, [])
 
     return (
         <BrowserRouter>

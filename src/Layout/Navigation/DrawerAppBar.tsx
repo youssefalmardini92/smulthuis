@@ -61,7 +61,7 @@ export default function DrawerAppBar(props: Props) {
     const drawer = (
         <Box onClick={handleDrawerToggle}>
             <Typography variant="h6" sx={{ my: 2 }}>
-                <img src={logo} width={100} style={{ margin: 5 }} />
+                <img src={logo} alt={'smulthuis logo'} width={100} style={{ margin: 5 }} />
             </Typography>
             <Divider />
             <List>
