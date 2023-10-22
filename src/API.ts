@@ -129,6 +129,7 @@ export type CreateServicesInput = {
   subtitle?: string | null,
   content?: string | null,
   imageUrl?: string | null,
+  weight?: number | null,
 };
 
 export type ModelServicesConditionInput = {
@@ -136,9 +137,22 @@ export type ModelServicesConditionInput = {
   subtitle?: ModelStringInput | null,
   content?: ModelStringInput | null,
   imageUrl?: ModelStringInput | null,
+  weight?: ModelIntInput | null,
   and?: Array< ModelServicesConditionInput | null > | null,
   or?: Array< ModelServicesConditionInput | null > | null,
   not?: ModelServicesConditionInput | null,
+};
+
+export type ModelIntInput = {
+  ne?: number | null,
+  eq?: number | null,
+  le?: number | null,
+  lt?: number | null,
+  ge?: number | null,
+  gt?: number | null,
+  between?: Array< number | null > | null,
+  attributeExists?: boolean | null,
+  attributeType?: ModelAttributeTypes | null,
 };
 
 export type Services = {
@@ -148,6 +162,7 @@ export type Services = {
   subtitle?: string | null,
   content?: string | null,
   imageUrl?: string | null,
+  weight?: number | null,
   createdAt: string,
   updatedAt: string,
 };
@@ -158,6 +173,7 @@ export type UpdateServicesInput = {
   subtitle?: string | null,
   content?: string | null,
   imageUrl?: string | null,
+  weight?: number | null,
 };
 
 export type DeleteServicesInput = {
@@ -239,6 +255,7 @@ export type ModelServicesFilterInput = {
   subtitle?: ModelStringInput | null,
   content?: ModelStringInput | null,
   imageUrl?: ModelStringInput | null,
+  weight?: ModelIntInput | null,
   and?: Array< ModelServicesFilterInput | null > | null,
   or?: Array< ModelServicesFilterInput | null > | null,
   not?: ModelServicesFilterInput | null,
@@ -316,8 +333,21 @@ export type ModelSubscriptionServicesFilterInput = {
   subtitle?: ModelSubscriptionStringInput | null,
   content?: ModelSubscriptionStringInput | null,
   imageUrl?: ModelSubscriptionStringInput | null,
+  weight?: ModelSubscriptionIntInput | null,
   and?: Array< ModelSubscriptionServicesFilterInput | null > | null,
   or?: Array< ModelSubscriptionServicesFilterInput | null > | null,
+};
+
+export type ModelSubscriptionIntInput = {
+  ne?: number | null,
+  eq?: number | null,
+  le?: number | null,
+  lt?: number | null,
+  ge?: number | null,
+  gt?: number | null,
+  between?: Array< number | null > | null,
+  in?: Array< number | null > | null,
+  notIn?: Array< number | null > | null,
 };
 
 export type ModelSubscriptionMenueItemsMenusFilterInput = {
@@ -458,6 +488,7 @@ export type CreateServicesMutation = {
     subtitle?: string | null,
     content?: string | null,
     imageUrl?: string | null,
+    weight?: number | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -476,6 +507,7 @@ export type UpdateServicesMutation = {
     subtitle?: string | null,
     content?: string | null,
     imageUrl?: string | null,
+    weight?: number | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -494,6 +526,7 @@ export type DeleteServicesMutation = {
     subtitle?: string | null,
     content?: string | null,
     imageUrl?: string | null,
+    weight?: number | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -682,6 +715,7 @@ export type GetServicesQuery = {
     subtitle?: string | null,
     content?: string | null,
     imageUrl?: string | null,
+    weight?: number | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -703,6 +737,7 @@ export type ListServicesQuery = {
       subtitle?: string | null,
       content?: string | null,
       imageUrl?: string | null,
+      weight?: number | null,
       createdAt: string,
       updatedAt: string,
     } | null >,
@@ -930,6 +965,7 @@ export type OnCreateServicesSubscription = {
     subtitle?: string | null,
     content?: string | null,
     imageUrl?: string | null,
+    weight?: number | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -947,6 +983,7 @@ export type OnUpdateServicesSubscription = {
     subtitle?: string | null,
     content?: string | null,
     imageUrl?: string | null,
+    weight?: number | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -964,6 +1001,7 @@ export type OnDeleteServicesSubscription = {
     subtitle?: string | null,
     content?: string | null,
     imageUrl?: string | null,
+    weight?: number | null,
     createdAt: string,
     updatedAt: string,
   } | null,

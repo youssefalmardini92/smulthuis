@@ -141,6 +141,7 @@ export const createServices = /* GraphQL */ `mutation CreateServices(
     subtitle
     content
     imageUrl
+    weight
     createdAt
     updatedAt
     __typename
@@ -160,6 +161,7 @@ export const updateServices = /* GraphQL */ `mutation UpdateServices(
     subtitle
     content
     imageUrl
+    weight
     createdAt
     updatedAt
     __typename
@@ -179,6 +181,7 @@ export const deleteServices = /* GraphQL */ `mutation DeleteServices(
     subtitle
     content
     imageUrl
+    weight
     createdAt
     updatedAt
     __typename

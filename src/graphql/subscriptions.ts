@@ -126,6 +126,7 @@ export const onCreateServices = /* GraphQL */ `subscription OnCreateServices($fi
     subtitle
     content
     imageUrl
+    weight
     createdAt
     updatedAt
     __typename
@@ -142,6 +143,7 @@ export const onUpdateServices = /* GraphQL */ `subscription OnUpdateServices($fi
     subtitle
     content
     imageUrl
+    weight
     createdAt
     updatedAt
     __typename
@@ -158,6 +160,7 @@ export const onDeleteServices = /* GraphQL */ `subscription OnDeleteServices($fi
     subtitle
     content
     imageUrl
+    weight
     createdAt
     updatedAt
     __typename

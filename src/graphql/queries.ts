@@ -87,6 +87,7 @@ export const getServices = /* GraphQL */ `query GetServices($id: ID!) {
     subtitle
     content
     imageUrl
+    weight
     createdAt
     updatedAt
     __typename
@@ -108,6 +109,7 @@ export const listServices = /* GraphQL */ `query ListServices(
       subtitle
       content
       imageUrl
+      weight
       createdAt
       updatedAt
       __typename

@@ -17,5 +17,6 @@ type Services @model @auth(rules: [{allow: public}]) {
   subtitle: String
   content: String
   imageUrl: String
+  weight: Int
 }
  
