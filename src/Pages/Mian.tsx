@@ -13,7 +13,7 @@ const MainPage = () => {
             const data = response['data'].listServices.items;
 
             if (data) {
-                setServices(data);
+                setServices(data.sort((a, b) => a.weight - b.weight));
             }
         })
     }, []);

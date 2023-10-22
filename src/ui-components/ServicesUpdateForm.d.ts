@@ -18,12 +18,14 @@ export declare type ServicesUpdateFormInputValues = {
     subtitle?: string;
     content?: string;
     imageUrl?: string;
+    weight?: number;
 };
 export declare type ServicesUpdateFormValidationValues = {
     title?: ValidationFunction<string>;
     subtitle?: ValidationFunction<string>;
     content?: ValidationFunction<string>;
     imageUrl?: ValidationFunction<string>;
+    weight?: ValidationFunction<number>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type ServicesUpdateFormOverridesProps = {
@@ -32,6 +34,7 @@ export declare type ServicesUpdateFormOverridesProps = {
     subtitle?: PrimitiveOverrideProps<TextFieldProps>;
     content?: PrimitiveOverrideProps<TextFieldProps>;
     imageUrl?: PrimitiveOverrideProps<TextFieldProps>;
+    weight?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type ServicesUpdateFormProps = React.PropsWithChildren<{
     overrides?: ServicesUpdateFormOverridesProps | undefined | null;

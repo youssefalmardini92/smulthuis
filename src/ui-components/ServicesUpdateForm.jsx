@@ -29,11 +29,13 @@ export default function ServicesUpdateForm(props) {
     subtitle: "",
     content: "",
     imageUrl: "",
+    weight: "",
   };
   const [title, setTitle] = React.useState(initialValues.title);
   const [subtitle, setSubtitle] = React.useState(initialValues.subtitle);
   const [content, setContent] = React.useState(initialValues.content);
   const [imageUrl, setImageUrl] = React.useState(initialValues.imageUrl);
+  const [weight, setWeight] = React.useState(initialValues.weight);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     const cleanValues = servicesRecord
@@ -43,6 +45,7 @@ export default function ServicesUpdateForm(props) {
     setSubtitle(cleanValues.subtitle);
     setContent(cleanValues.content);
     setImageUrl(cleanValues.imageUrl);
+    setWeight(cleanValues.weight);
     setErrors({});
   };
   const [servicesRecord, setServicesRecord] = React.useState(servicesModelProp);
@@ -66,6 +69,7 @@ export default function ServicesUpdateForm(props) {
     subtitle: [],
     content: [],
     imageUrl: [],
+    weight: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -97,6 +101,7 @@ export default function ServicesUpdateForm(props) {
           subtitle: subtitle ?? null,
           content: content ?? null,
           imageUrl: imageUrl ?? null,
+          weight: weight ?? null,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -161,6 +166,7 @@ export default function ServicesUpdateForm(props) {
               subtitle,
               content,
               imageUrl,
+              weight,
             };
             const result = onChange(modelFields);
             value = result?.title ?? value;
@@ -188,6 +194,7 @@ export default function ServicesUpdateForm(props) {
               subtitle: value,
               content,
               imageUrl,
+              weight,
             };
             const result = onChange(modelFields);
             value = result?.subtitle ?? value;
@@ -215,6 +222,7 @@ export default function ServicesUpdateForm(props) {
               subtitle,
               content: value,
               imageUrl,
+              weight,
             };
             const result = onChange(modelFields);
             value = result?.content ?? value;
@@ -242,6 +250,7 @@ export default function ServicesUpdateForm(props) {
               subtitle,
               content,
               imageUrl: value,
+              weight,
             };
             const result = onChange(modelFields);
             value = result?.imageUrl ?? value;
@@ -255,6 +264,38 @@ export default function ServicesUpdateForm(props) {
         errorMessage={errors.imageUrl?.errorMessage}
         hasError={errors.imageUrl?.hasError}
         {...getOverrideProps(overrides, "imageUrl")}
+      ></TextField>
+      <TextField
+        label="Weight"
+        isRequired={false}
+        isReadOnly={false}
+        type="number"
+        step="any"
+        value={weight}
+        onChange={(e) => {
+          let value = isNaN(parseInt(e.target.value))
+            ? e.target.value
+            : parseInt(e.target.value);
+          if (onChange) {
+            const modelFields = {
+              title,
+              subtitle,
+              content,
+              imageUrl,
+              weight: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.weight ?? value;
+          }
+          if (errors.weight?.hasError) {
+            runValidationTasks("weight", value);
+          }
+          setWeight(value);
+        }}
+        onBlur={() => runValidationTasks("weight", weight)}
+        errorMessage={errors.weight?.errorMessage}
+        hasError={errors.weight?.hasError}
+        {...getOverrideProps(overrides, "weight")}
       ></TextField>
       <Flex
         justifyContent="space-between"

@@ -1,5 +1,5 @@
 import MainPage from "../Pages/Mian";
-import RecipesPage from "../Pages/Recipes";
+import MenuPage from "../Pages/Menu";
 import AboutPage from "../Pages/About";
 import WorkPage from "../Pages/Work";
 
@@ -30,7 +30,7 @@ const pages: Page[] = [
         headerTitle: 'menu',
         path: '/menu',
         hasCover: true,
-        content: RecipesPage,
+        content: MenuPage,
     },
     {
         title: 'About',
