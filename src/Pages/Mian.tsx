@@ -2,6 +2,10 @@ import React, {useEffect, useState} from 'react';
 import {Box, Typography, Button, useMediaQuery} from '@mui/material';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import {allServices} from "../controllers/ServiceController";
+import Title from "../Layout/Typography/Title";
+import Subtitle from "../Layout/Typography/Subtitle";
+import {Block} from "@mui/icons-material";
+import BlockText from "../Layout/Typography/BlockText";
 
 const MainPage = () => {
     const isMobile = useMediaQuery('(max-width:600px)');
@@ -57,13 +61,9 @@ const MainPage = () => {
                         }}
                     >
                         <Box sx={{maxWidth: 400, mx: 'auto'}}>
-                            <Typography variant="h3" sx={{fontFamily: "'Rowdies', cursive"}}>{item.title}</Typography>
-                            <Typography variant="subtitle2" color="text.secondary"
-                                        sx={{pb: 2, fontFamily: "'Montserrat Alternates', sans-serif"}}>
-                                {item.subtitle}
-                            </Typography>
-                            <Typography variant="body1"
-                                        sx={{fontFamily: "'Montserrat Alternates', sans-serif"}}>{item.content}</Typography>
+                            <Title content={item.title} />
+                            <Subtitle content={item.subtitle} sx={{ pb: 2 }}/>
+                            <BlockText content={item.content} />
                             <Box sx={{display: 'flex', justifyContent: 'center', pt: 3}}>
                                 <Button
                                     variant="contained"
