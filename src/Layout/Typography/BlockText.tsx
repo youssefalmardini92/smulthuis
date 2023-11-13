@@ -6,7 +6,7 @@ interface BlockTextProps extends TypographyProps {
 }
 
 const BlockText = ({content, sx}: BlockTextProps) => {
-    return <Typography sx={sx} variant="body1" fontFamily={Fonts.SECONDARY}>{content}</Typography>
+    return <Typography sx={sx} variant="body2" fontFamily={Fonts.SECONDARY}>{content}</Typography>
 };
 
 export default BlockText;

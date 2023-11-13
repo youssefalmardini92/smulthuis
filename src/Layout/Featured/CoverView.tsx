@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Box, Grid, Typography} from "@mui/material";
+import {Fonts} from "../../enums/Fonts";
 
 type CoverViewProps = {
     title: string;
@@ -31,10 +32,10 @@ const CoverView = ({ pageContent, title, subtitle } : CoverViewProps) => {
                     }}
                 >
                     <Box sx={{ paddingTop: '25vh' }}>
-                        <Typography variant={mobile ? 'h2' : 'h1'} component="h1" sx={{ fontFamily: "'Rowdies', cursive" }}>
+                        <Typography variant={mobile ? 'h3' : 'h2'} component="h1" sx={{ fontFamily: Fonts.PRIMARY }}>
                             { title }
                         </Typography>
-                        <Typography variant="subtitle1" sx={{ pb: 5, fontFamily: "'Montserrat Alternates', sans-serif" }} display="block">
+                        <Typography variant="subtitle2" sx={{ pb: 5, fontFamily: Fonts.SECONDARY }} display="block">
                             { subtitle }
                         </Typography>
                     </Box>

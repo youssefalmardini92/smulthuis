@@ -1,6 +1,5 @@
 import React from 'react';
 import CoverView from "../../Layout/Featured/CoverView";
-import Container from "@mui/material/Container";
 
 type PageProps = {
     headerTitle: any;

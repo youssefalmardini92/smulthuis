@@ -6,7 +6,7 @@ interface TitleProps extends TypographyProps {
 }
 
 const Title = ({content, sx}: TitleProps) => {
-    return <Typography sx={sx} variant="h3" fontFamily={Fonts.PRIMARY}>
+    return <Typography sx={sx} variant="h5" fontFamily={Fonts.PRIMARY}>
         {content}
     </Typography>
 };

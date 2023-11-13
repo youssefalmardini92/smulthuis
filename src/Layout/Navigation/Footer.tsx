@@ -13,8 +13,10 @@ const Footer = () => {
         <Box
             component="footer"
             sx={{
-                p: 6,
-                mt: 5,
+                position: 'relative ',
+                bottom: 0,
+                mt: '15rem',
+                p: '5%',
             }}
         >
             <Container maxWidth="xl">

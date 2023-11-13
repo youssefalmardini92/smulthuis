@@ -5,11 +5,21 @@ import {Themes} from "../../../src/enums/Themes";
 export interface appState {
     theme: string
     fullScreen: boolean,
+    resource: {
+        title: string;
+        subtitle: string;
+        content: string;
+    },
 }
 
 const initialState: appState = {
     theme: "primary",
     fullScreen: false,
+    resource: {
+        title: "",
+        subtitle: "",
+        content: "",
+    }
 }
 
 export const appSlice = createSlice({
@@ -21,6 +31,9 @@ export const appSlice = createSlice({
         },
         toggleFullScreen: (state: appState, action: PayloadAction<{theme: string}>): void => {
             state.fullScreen = !state.fullScreen;
+        },
+        setResource: (state: appState, action: PayloadAction<{resource: typeof initialState.resource}>): void => {
+            state.resource = action.payload.resource;
         },
     },
 });

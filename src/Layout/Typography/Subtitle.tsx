@@ -8,7 +8,7 @@ interface SubtitleProps extends TypographyProps {
 const Subtitle = ({content, sx}: SubtitleProps) => {
     return <Typography
         sx={sx}
-        variant="subtitle2"
+        variant="caption"
         color={"text.secondary"}
         fontFamily={Fonts.SECONDARY}>
         {content}

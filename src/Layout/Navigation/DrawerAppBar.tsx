@@ -17,6 +17,7 @@ import ThemeSwitch from "../Featured/ThemeSwitcher";
 import darkLogo from '../../../src/assets/logo/smulthuis-high-resolution-logo-color-on-transparent-background.png';
 import primaryLogo from '../../../src/assets/logo/smulthuis-high-resolution-logo-black-on-transparent-background.png';
 import {useLocalStorage} from "usehooks-ts";
+import NavItem from "./NavItem";
 
 interface Props {
     /**
@@ -61,18 +62,14 @@ export default function DrawerAppBar(props: Props) {
     const drawer = (
         <Box onClick={handleDrawerToggle}>
             <Typography variant="h6" sx={{ my: 2 }}>
-                <img src={logo} alt={'smulthuis logo'} width={100} style={{ margin: 5 }} />
+                <img src={logo} alt={'smulthuis logo'} width={75} style={{ margin: 5 }} />
             </Typography>
             <Divider />
             <List>
                 {navItems.map((item) => (
                     <ListItem key={item.name} disablePadding>
                         <ListItemButton sx={{ textAlign: 'center' }}>
-                            <Link href={item.route} underline="none">
-                                <Button key={item.name}  sx={{ fontFamily: "'Rowdies', cursive", color: "text.primary" }}>
-                                    {item.name}
-                                </Button>
-                            </Link>
+                            <NavItem name={item.name} route={item.route} />
                         </ListItemButton>
                     </ListItem>
                 ))}
@@ -97,20 +94,15 @@ export default function DrawerAppBar(props: Props) {
                         <MenuIcon />
                     </IconButton>
                     <Typography
-                        variant="h6"
                         component="div"
                         sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
                     >
-                        <img src={logo} width={100} style={{ margin: 5 }} />
+                        <img src={logo} width={75} style={{ margin: 5 }} />
                     </Typography>
                     <ThemeSwitch />
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {navItems.map((item) => (
-                            <Link key={item.name} href={item.route} underline="none">
-                                <Button key={item.name}  sx={{ fontFamily: "'Rowdies', cursive", color: "text.primary" }}>
-                                    {item.name}
-                                </Button>
-                            </Link>
+                           <NavItem key={item.name} name={item.name} route={item.route} />
                         ))}
                     </Box>
                 </Toolbar>

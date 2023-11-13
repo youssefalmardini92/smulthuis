@@ -8,6 +8,7 @@ import Page from "./Layout/Page/Page";
 import Footer from "./Layout/Navigation/Footer";
 import Container from "@mui/material/Container";
 import { useLocalStorage } from "usehooks-ts";
+import ContentPage from "./Pages/Content";
 
 const App: React.FC = () => {
 
@@ -16,14 +17,12 @@ const App: React.FC = () => {
 
     useEffect( ()=> {
         // Get all the nav elements
-
-        console.log(navElements);
-
         const nav = navElements[0];
+
         if (nav) {
             window.addEventListener("scroll", () => {
                 if (window.scrollY > 100) {
-                    nav.style.background = "rgba(0, 0, 0, 0.4)"; // Change the background opacity as needed
+                    nav.style.background = "rgba(0, 0, 0, 0.4)";
                 } else {
                     nav.style.background = "rgba(0, 0, 0, 0)";
                 }
@@ -64,6 +63,7 @@ const App: React.FC = () => {
                                    />
                                }
                         />
+                        <Route path="/content" element={<ContentPage />}></Route>
                     </Routes>
                     <Footer/>
                 </Container>
